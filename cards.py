@@ -1,3 +1,6 @@
+import random
+
+
 
 deck = []
 suits = ["♠", "♣", "♦","♥"]
@@ -15,5 +18,11 @@ for i in range(4):
             value = "K"
         deck.append(f"{value}{suits[i]}")
         
-            
-print(deck)
+
+
+
+for i in range(len(deck)-1,0,-1):
+    j= random.randint(0,i+1)
+
+    deck[i], deck[j] = deck[j], deck[i]
+print (deck)
