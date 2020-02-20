@@ -16,6 +16,7 @@ for i in range(4):
             value = "Q"
         elif(j==13):
             value = "K"
+        
         deck.append(f"{value}{suits[i]}")
         
 
@@ -25,4 +26,30 @@ for i in range(len(deck)-1,0,-1):
     j= random.randint(0,i+1)
 
     deck[i], deck[j] = deck[j], deck[i]
+print("Unsorted cards: ")
 print (deck)
+
+
+def selection_sort(deck):        
+    for i in range(len(deck)):
+        minimum = i
+       
+        for j in range(i + 1, len(deck)):
+            # Select the smallest value
+            if deck[j] < deck[minimum]:
+                minimum = j
+                
+        # Place it at the front of the
+        # sorted end of the array
+        deck[minimum], deck[i] = deck[i], deck[minimum]
+        
+            
+    return deck
+
+
+
+
+
+selection_sort(deck)
+print("Sorted cards:" )
+print(deck)
